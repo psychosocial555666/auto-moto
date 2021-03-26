@@ -2,4 +2,10 @@
 @import "global/fontface.scss";
 @import "global/variables.scss";
 @import "global/global-styles.scss";
-// @import "blocks/index.scss";
+@import "blocks/page-header.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/main-content.scss";
+@import "blocks/photo-slider.scss";
+@import "blocks/description.scss";
+@import "blocks/tabs.scss";
+@import "blocks/page-footer.scss";

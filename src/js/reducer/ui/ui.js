@@ -1,52 +1,41 @@
-// import {extend} from '../../utils';
+import {extend} from "./../../utils/utils.js";
 
 
 const initialState = {
-  // activeOfferId: null,
-  // activeOffer: null,
-  // showSortMenu: false,
+  currentSlide: 0,
 };
 
 const ActionType = {
-  // SET_ACTIVE_OFFER_ID: `SET_ACTIVE_OFFER_ID`,
-  // SET_ACTIVE_OFFER: `SET_ACTIVE_OFFER`,
-  // SHOW_SORT_MENU: `SHOW_SORT_MENU`,
+  INCREASE_SLIDE: `INCREASE_SLIDE`,
+  REDUCE_SLIDE: `REDUCE_SLIDE`,
 };
 
 const ActionCreator = {
-  // setActiveOfferId: (offerId) => ({
-  //   type: ActionType.SET_ACTIVE_OFFER_ID,
-  //   payload: offerId,
-  // }),
-  // setActiveOffer: (offer) => ({
-  //   type: ActionType.SET_ACTIVE_OFFER,
-  //   payload: offer,
-  // }),
-  // showSortMenu: (isShown) => ({
-  //   type: ActionType.SHOW_SORT_MENU,
-  //   payload: isShown,
-  // })
+  increaseSlide: (slide) => ({
+    type: ActionType.INCREASE_SLIDE,
+    payload: slide += 1,
+  }),
+  reduceSlide: (slide) => ({
+    type: ActionType.REDUCE_SLIDE,
+    payload: slide -= 1,
+  }),
 };
 
 const reducer = (state = initialState, action) => {
-  // switch (action.type) {
-  //   case ActionType.SET_ACTIVE_OFFER_ID:
-  //     return extend(state, {
-  //       activeOfferId: action.payload,
-  //     });
+  switch (action.type) {
+    case ActionType.INCREASE_SLIDE:
+      return extend(state, {
+        currentSlide: action.payload,
+      });
 
-  //   case ActionType.SET_ACTIVE_OFFER:
-  //     return extend(state, {
-  //       activeOffer: action.payload,
-  //     });
+    case ActionType.REDUCE_SLIDE:
+      return extend(state, {
+        currentSlide: action.payload,
+      });
 
-  //   case ActionType.SHOW_SORT_MENU:
-  //     return extend(state, {
-  //       showSortMenu: action.payload,
-  //     });
-  //   default:
-  //     return state;
-  // }
+    default:
+      return state;
+  }
 };
 
 export {reducer, ActionType, ActionCreator};

@@ -1,0 +1,19 @@
+.page-header {
+  width: 100%;
+  background-color: $light-grey;
+}
+
+.page-header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.page-header__toggle {
+  display: none;
+}
+
+.page-header__logo {
+  padding-left: 6px;
+}

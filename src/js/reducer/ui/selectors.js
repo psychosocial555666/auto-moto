@@ -3,14 +3,6 @@ import NameSpace from "../name-space";
 
 const NAME_SPACE = NameSpace.UI;
 
-export const getActiveOfferId = (state) => {
-  return state[NAME_SPACE].activeOfferId;
-};
-
-export const getActiveOffer = (state) => {
-  return state[NAME_SPACE].activeOffer;
-};
-
-export const getShowSortMenu = (state) => {
-  return state[NAME_SPACE].showSortMenu;
+export const getCurrentSlide = (state) => {
+  return state[NAME_SPACE].currentSlide;
 };
