@@ -17,6 +17,8 @@
 
   img {
     display: block;
+    animation-name: fade-in;
+    animation-duration: 0.3s;
   }
 }
 
@@ -30,9 +32,11 @@
   align-items: center;
   justify-content: center;
   transition: 0.3s ease-in-out all;
+  cursor: pointer;
 
   &:disabled {
     opacity: 0.6;
+    cursor: not-allowed;
 
     &:hover,
     &:focus {
@@ -46,7 +50,7 @@
   }
 
   &:active {
-   background-color: $light-grey;
+    background-color: $light-grey;
   }
 }
 
@@ -57,4 +61,14 @@
 
 .photo-slider__button--next {
   margin-left: 31px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

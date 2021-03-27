@@ -1,0 +1,5 @@
+export const TabType = {
+  CHARACTERISTICS: 'CHARACTERISTICS',
+  REVIEWS: 'REVIEWS',
+  CONTACTS: 'CONTACTS',
+}

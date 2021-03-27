@@ -25,7 +25,7 @@ function Header() {
                 })}
               </ul>
             </nav>
-            <button className="page-header__toggle">
+            <button type="button" className="page-header__toggle">
               Меню
             </button>
           </div>

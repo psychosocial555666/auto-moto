@@ -1,5 +1,32 @@
 .tabs {
   width: 100%;
-  height: 400px;
-  background-color: aqua;
+}
+
+.tabs__controls {
+  display: flex;
+}
+
+.tabs__control {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 195px;
+  height: 50px;
+  border: 1px solid $grey;
+  color: $main-text;
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+
+  &:hover,
+  &:focus {
+    border-color: $main-text;
+  }
+}
+
+.tabs__control--active {
+  background-color: $accent;
+  color: $white;
+  border-color: $accent;
+  cursor: not-allowed;
 }

@@ -12,14 +12,14 @@
 
 @font-face {
   font-family: "opensans";
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
   src:
     local("OpenSans"),
     url("../../fonts/opensans-semibold.woff2") format("woff2"),
     url("../../fonts/opensans-semibold.woff") format("woff"),
     url("../../fonts/opensans-semibold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {

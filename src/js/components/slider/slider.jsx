@@ -23,7 +23,7 @@ function Slider (props) {
         </div>
 
         <div className="photo-slider__container">
-          <button className="photo-slider__button photo-slider__button--prev" onClick={() => onPrevButtonClick(currentSlide)} disabled={currentSlide === 0 ? true : false}>
+          <button type="button" className="photo-slider__button photo-slider__button--prev" onClick={() => onPrevButtonClick(currentSlide)} disabled={currentSlide === 0 ? true : false}>
             <img src={arrow} alt="back" width="14" height="14"/>
           </button>
           {car.photos.map((item) => {
@@ -33,7 +33,7 @@ function Slider (props) {
               </div>
             )
           })}
-          <button className="photo-slider__button photo-slider__button--next" onClick={() => onNextButtonClick(currentSlide)} disabled={currentSlide === car.photos.length - 1 ? true : false}>
+          <button type="button" className="photo-slider__button photo-slider__button--next" onClick={() => onNextButtonClick(currentSlide)} disabled={currentSlide === car.photos.length - 1 ? true : false}>
             <img src={arrow} alt="next" width="14" height="14"/>
           </button>
         </div>

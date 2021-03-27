@@ -32,3 +32,20 @@ body {
   margin: 0 auto;
   padding: 0 10px;
 }
+
+.button {
+  display: block;
+  border-radius: 0;
+  border: none;
+  padding: 16px 20px 17px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  background-color: $accent;
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+}
