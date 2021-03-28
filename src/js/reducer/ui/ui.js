@@ -4,7 +4,8 @@ import {extend} from "./../../utils/utils.js";
 
 const initialState = {
   currentSlide: 0,
-  currentTab: TabType.CHARACTERISTICS,
+  currentTab: TabType.REVIEWS,
+  isModalOpened: false,
 };
 
 const ActionType = {

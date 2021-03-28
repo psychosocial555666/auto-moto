@@ -1,6 +1,6 @@
 import React from "react";
 import arrow from "../../../img/arrow.svg";
-import {getCars} from "./../../reducer/data/selectors.js"
+import {getCars} from "./../../reducer/data/selectors.js";
 import {connect} from "react-redux";
 import {getCurrentSlide} from "../../reducer/ui/selectors";
 import {ActionCreator} from "../../reducer/ui/ui.js"

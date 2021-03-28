@@ -1,0 +1,133 @@
+.reviews {
+  position: relative;
+  color: $main-text;
+}
+
+.reviews__item {
+  padding: 20px 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.reviews__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: $accent;
+  border: 1px solid $accent;
+}
+
+.reviews__name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.reviews__block {
+  font-size: 15px;
+  line-height: 20px;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    margin-bottom: 3px;
+    position: relative;
+    font-weight: 600;
+    color: #000000;
+
+    &::before {
+      content: "+";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 13px;
+    padding-left: 20px;
+  }
+}
+
+.reviews__block--disadvantages {
+  h3 {
+    &::before {
+      content: "-";
+    }
+  }
+}
+
+.reviews__block--comment {
+  h3 {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  p {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.reviews__rating {
+  position: relative;
+  width: 103px;
+  margin-bottom: 30px;
+
+  &::before {
+    content: "Советует";
+    position: absolute;
+    top: 0;
+    right: -86px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: $accent;
+  }
+}
+
+.reviews__stars {
+  top: 0;
+  left: 0;
+}
+
+.reviews__stars--active {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.reviews__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.reviews__date {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: $black;
+  opacity: 0.4;
+  margin-right: 26px;
+}
+
+.reviews__reply {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: $accent;
+  text-decoration: none;
+}

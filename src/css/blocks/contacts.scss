@@ -1,0 +1,49 @@
+.contacts {
+  padding: 20px 0;
+  color: $dark;
+  display: flex;
+}
+
+.contacts__wrapper {
+  margin-right: 100px;
+}
+
+.contacts__item {
+  margin-bottom: 30px;
+
+  h3 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $black;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $black;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+  }
+}
+
+.contacts__map {
+  width: 431px;
+  height: 271px;
+  background-image: url("../../img/map.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}

@@ -10,3 +10,7 @@ export const getCurrentSlide = (state) => {
 export const getCurrentTab = (state) => {
   return state[NAME_SPACE].currentTab;
 };
+
+export const getModalStatus = (state) => {
+  return state[NAME_SPACE].isModalOpened;
+};
