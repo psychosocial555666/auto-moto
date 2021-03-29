@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { headerMenuItems } from "../../const";
 import logo from "./../../../img/logo.svg";
-
-const menuItems = ['Автомобили', 'Контакты', 'Услуги', 'Вакансии',];
 
 function Header() {
   return (
@@ -15,7 +14,7 @@ function Header() {
             </div>
             <nav className="page-header__nav main-nav">
               <ul className="main-nav__list">
-                {menuItems.map((item) => {
+                {headerMenuItems.map((item) => {
                   return (
                   <li key={item} className="main-nav__item">
                     <a href="#" className="main-nav__link">{item}</a>

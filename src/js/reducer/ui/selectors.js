@@ -14,3 +14,11 @@ export const getCurrentTab = (state) => {
 export const getModalStatus = (state) => {
   return state[NAME_SPACE].isModalOpened;
 };
+
+export const getNameStatus = (state) => {
+  return state[NAME_SPACE].isNameValid;
+};
+
+export const getCommentStatus = (state) => {
+  return state[NAME_SPACE].isCommentValid;
+};

@@ -18,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
+  z-index: 100;
   padding: 30px 35px 35px;
   top: 50%;
   left: 50%;
@@ -86,57 +87,47 @@
 
 .modal__rating {
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   align-items: center;
 
   span {
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
+    order: 1;
+    margin-right: 6px;
   }
-}
 
-.modal__star {
   label {
+    order: 0;
+
     svg {
       fill: rgba(189, 190, 194, 0.7);
     }
-
-    &:hover {
-      svg {
-        fill: $accent;
-      }
-    }
-  }
-
-  input {
-    &:checked ~ label {
-      svg {
-        fill: $accent;
-      }
-    }
   }
 }
 
-// .modal__star > input:checked ~ label {
-// 	svg {
-//     fill: $accent;
-//   }
-// }
-// .modal__star :not(:checked) > label:hover,
-// .modal__star:not(:checked) > label:hover ~ label {
-// 	svg {
-//     fill: $accent;
-//   }
-// }
-// .modal__star > input:checked + label:hover,
-// .modal__star > input:checked + label:hover ~ label,
-// .modal__star > input:checked ~ label:hover,
-// .modal__star > input:checked ~ label:hover ~ label,
-// .modal__star > label:hover ~ input:checked ~ label {
-// 	svg {
-//     fill: $accent;
-//   }
-// }
+.modal__rating > input:checked ~ label {
+	svg {
+    fill: $accent;
+  }
+}
+.modal__rating:not(:checked) > label:hover,
+.modal__rating:not(:checked) > label:hover ~ label {
+	svg {
+    fill: $accent;
+  }
+}
+.modal__rating > input:checked + label:hover,
+.modal__rating > input:checked + label:hover ~ label,
+.modal__rating > input:checked ~ label:hover,
+.modal__rating > input:checked ~ label:hover ~ label,
+.modal__rating > label:hover ~ input:checked ~ label {
+	svg {
+    fill: $accent;
+  }
+}
 
 .modal__close {
   position: absolute;
@@ -144,4 +135,10 @@
   right: 25px;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 }

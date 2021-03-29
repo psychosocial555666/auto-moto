@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-
-const menuItems = ['Корпоративным клиентам', 'Клиентам', 'Аренда авто', 'Каршеринг', 'Как продать авто', 'Trade-in', 'Test drive',];
+import { footerMenuItems } from "../../const";
 
 function Footer() {
   return (
@@ -11,7 +10,7 @@ function Footer() {
           <div className="page-footer__content">
             <nav className="page-footer__nav">
               <ul className="page-footer__list">
-                {menuItems.map((item) => {
+                {footerMenuItems.map((item) => {
                   return (
                   <li key={item} className="page-footer__item">
                     <a href="#" className="page-footer__link">{item}</a>

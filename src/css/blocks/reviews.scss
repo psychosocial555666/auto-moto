@@ -15,6 +15,13 @@
   background-color: transparent;
   color: $accent;
   border: 1px solid $accent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $accent;
+    color: $white;
+  }
 }
 
 .reviews__name {

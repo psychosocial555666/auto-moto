@@ -3,7 +3,7 @@ import Description from "../description/description";
 import Slider from "../slider/slider";
 import Tabs from "../tabs/tabs";
 
-function MainContent(props) {
+function MainContent() {
   return (
     <React.Fragment>
       <main className="main-content">

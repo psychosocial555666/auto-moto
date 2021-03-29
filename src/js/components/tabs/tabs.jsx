@@ -7,6 +7,8 @@ import { TabType } from "../../const.js";
 import Characteristics from "../characteristics/characteristics.jsx";
 import Reviews from "../reviews/reviews.jsx";
 import Contacts from "../contacts/contacts.jsx";
+import PropTypes from 'prop-types';
+import { carsType } from "../../types";
 
 function Tabs (props) {
   const {
@@ -15,15 +17,13 @@ function Tabs (props) {
     onTabButtionClick,
   } = props;
 
-  const car = cars[0];
-
   let tabScreen;
 
   if(currentTab === TabType.CHARACTERISTICS) {
-    tabScreen = <Characteristics characteristics={car.characteristics} />
+    tabScreen = <Characteristics characteristics={cars.characteristics} />
   }
   if(currentTab === TabType.REVIEWS) {
-    tabScreen = <Reviews reviews={car.reviews}/>
+    tabScreen = <Reviews reviews={cars.reviews}/>
   }
   if(currentTab === TabType.CONTACTS) {
     tabScreen = <Contacts />
@@ -52,6 +52,12 @@ function Tabs (props) {
       </section>
     </React.Fragment>
   );
+}
+
+Tabs.propTypes = {
+  cars: carsType,
+  currentTab: PropTypes.string,
+  onTabButtionClick: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
