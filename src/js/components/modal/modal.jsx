@@ -106,6 +106,8 @@ class ReviewModal extends React.PureComponent {
     let disadvantages = this.disadvantagesRef.current;
     let comment = this.commentRef.current;
 
+    name.focus();
+
     if(this.myStorage.author) {
       name.value = this.myStorage.author;
     }
