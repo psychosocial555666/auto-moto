@@ -1,15 +1,6 @@
 import {TabType} from "../../const.js";
 import {extend} from "./../../utils/utils.js";
 
-
-const initialState = {
-  currentSlide: 0,
-  currentTab: TabType.CHARACTERISTICS,
-  isModalOpened: false,
-  isNameValid: true,
-  isCommentValid: true,
-};
-
 const ActionType = {
   INCREASE_SLIDE: `INCREASE_SLIDE`,
   REDUCE_SLIDE: `REDUCE_SLIDE`,
@@ -17,6 +8,14 @@ const ActionType = {
   CHANGE_MODAL_STATUS: `CHANGE_MODAL_STATUS`,
   CHANGE_NAME_VALIDITY: `CHANGE_NAME_VALIDITY`,
   CHANGE_COMMENT_VALIDITY: `CHANGE_COMMENT_VALIDITY`,
+};
+
+const initialState = {
+  currentSlide: 0,
+  currentTab: TabType.CHARACTERISTICS,
+  isModalOpened: false,
+  isNameValid: true,
+  isCommentValid: true,
 };
 
 const ActionCreator = {
@@ -79,7 +78,7 @@ const reducer = (state = initialState, action) => {
       });
     default:
       return state;
-  }
+  };
 };
 
 export { reducer, ActionType, ActionCreator };

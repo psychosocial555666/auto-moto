@@ -17,6 +17,6 @@ function MainContent() {
       </main>
     </React.Fragment>
   );
-}
+};
 
 export default MainContent;

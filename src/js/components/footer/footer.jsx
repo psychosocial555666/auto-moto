@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { footerMenuItems } from "../../const";
+import {footerMenuItems} from "../../const";
 
 function Footer() {
   return (
@@ -24,6 +24,6 @@ function Footer() {
       </footer>
     </React.Fragment>
   );
-}
+};
 
 export default Footer;

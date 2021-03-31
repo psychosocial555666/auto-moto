@@ -6,6 +6,11 @@ export const TabType = {
 
 export const ESC_KEY = 27;
 
+export const SCREEN_LATITUDE = 59.968137;
+export const SCREEN_LONGITUDE = 30.316263;
+export const PIN_LATITUDE = 59.968150;
+export const PIN_LONGITUDE = 30.316275;
+
 export const ratingFields = [
   {
     value: 100,

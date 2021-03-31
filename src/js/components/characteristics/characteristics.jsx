@@ -1,5 +1,5 @@
 import React from "react";
-import { characteristicsType } from "../../types";
+import {characteristicsType} from "../../types";
 
 function Characteristics(props) {
   const {characteristics} = props;
@@ -17,10 +17,10 @@ function Characteristics(props) {
       </ul>
     </React.Fragment>
   );
-}
+};
 
 Characteristics.propTypes = {
   characteristics: characteristicsType,
-}
+};
 
 export default Characteristics;

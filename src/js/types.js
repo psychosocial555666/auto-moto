@@ -4,8 +4,8 @@ export const characteristicsType = PropTypes.arrayOf(
   PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.string,
-  })
-)
+  }),
+);
 
 export const reviewsType = PropTypes.arrayOf(
   PropTypes.shape({
@@ -15,11 +15,11 @@ export const reviewsType = PropTypes.arrayOf(
     disadvantages: PropTypes.string,
     comment: PropTypes.string,
     rating: PropTypes.string,
-    date: PropTypes.string,
-  })
-)
+    date: PropTypes.date,
+  }),
+);
 
-export const carsType = PropTypes.shape({
+export const carType = PropTypes.shape({
   id: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.shape({
@@ -36,4 +36,4 @@ export const carsType = PropTypes.shape({
   characteristics: characteristicsType,
   photos: PropTypes.arrayOf(PropTypes.string),
   reviews: reviewsType,
-})
+});

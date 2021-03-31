@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "config-overrides-path": "node_modules/react-app-rewire-disable-chunks",
   "dependencies": {
     "@fontsource/open-sans": "^4.2.2",
     "@testing-library/jest-dom": "^5.11.9",
@@ -45,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-rewire-disable-chunks": "0.0.1",
+    "react-app-rewired": "^2.1.8"
   }
 }

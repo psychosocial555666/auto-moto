@@ -2,14 +2,14 @@ import React from "react";
 import close from "../../../img/close.svg";
 import {connect} from "react-redux";
 import {extend} from "../../utils/utils.js" 
-import {getCars} from "./../../reducer/data/selectors.js";
+import {getCar} from "./../../reducer/data/selectors.js";
 import {getNameStatus} from "./../../reducer/ui/selectors.js";
 import {getCommentStatus} from "./../../reducer/ui/selectors.js";
 import {ActionCreator as ActionCreatorUI} from "../../reducer/ui/ui.js";
 import {ActionCreator as ActionCreatorDATA} from "../../reducer/data/data.js"
 import {ESC_KEY} from "../../const";
 import {ratingFields} from "./../../const.js"
-import { carsType } from "../../types";
+import { carType } from "../../types";
 import PropTypes from 'prop-types';
 
 class ReviewModal extends React.PureComponent {
@@ -22,7 +22,7 @@ class ReviewModal extends React.PureComponent {
     this.disadvantagesRef = React.createRef();
     this.commentRef = React.createRef();
 
-    this.rating = 0;
+    this.rating = "0";
     this.myStorage = window.localStorage;
 
     this._closeButtonClickHandler = this._closeButtonClickHandler.bind(this);
@@ -83,8 +83,8 @@ class ReviewModal extends React.PureComponent {
       this.myStorage.setItem('disadvantages', disadvantages);
       this.myStorage.setItem('comment', comment);
 
-      let newReviews = this.props.cars.reviews.slice(0, this.props.cars.reviews.lenght).concat({
-        id: this.props.cars.reviews.length + 1,
+      let newReviews = this.props.car.reviews.slice(0, this.props.car.reviews.lenght).concat({
+        id: this.props.car.reviews.length + 1,
         author: name,
         advantages: advantages,
         disadvantages: disadvantages,
@@ -92,12 +92,12 @@ class ReviewModal extends React.PureComponent {
         rating: rating,
         comment: comment,
       });
-      this.props.cars.reviews = newReviews;
-      let newState = extend(this.props.cars, {})
+      this.props.car.reviews = newReviews;
+      let newState = extend(this.props.car, {})
       this.props.addReview(newState);
       this.props.popupClose(false);
-    }
-  }
+    };
+  };
 
   componentDidMount () {
     window.addEventListener("keydown", this._isEscKeyPressed);
@@ -110,27 +110,27 @@ class ReviewModal extends React.PureComponent {
 
     if(this.myStorage.author) {
       name.value = this.myStorage.author;
-    }
+    };
 
     
     if(this.myStorage.advantages) {
       advantages.value = this.myStorage.advantages;
-    }
+    };
 
     
     if(this.myStorage.disadvantages) {
       disadvantages.value = this.myStorage.disadvantages;
-    }
+    };
 
     
     if(this.myStorage.comment) {
       comment.value = this.myStorage.comment;
-    }
+    };
   }
 
   componentWillUnmount () {
     window.removeEventListener("keydown", this._isEscKeyPressed)
-  }
+  };
 
   render() {
     return(
@@ -182,21 +182,21 @@ class ReviewModal extends React.PureComponent {
         </section>
       </React.Fragment>
     )
-  }
-}
+  };
+};
 
 ReviewModal.propTypes = {
-  cars: carsType,
+  car: carType,
   isNameValid: PropTypes.bool,
   isCommentValid: PropTypes.bool,
   popupClose: PropTypes.func,
   validateName: PropTypes.func,
   validateComment: PropTypes.func,
   addReview: PropTypes.func,
-}
+};
 
 const mapStateToProps = (state) => ({
-  cars: getCars(state),
+  car: getCar(state),
   isNameValid: getNameStatus(state),
   isCommentValid: getCommentStatus(state),
 });

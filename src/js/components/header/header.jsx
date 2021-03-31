@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { headerMenuItems } from "../../const";
+import {headerMenuItems} from "../../const";
 import logo from "./../../../img/logo.svg";
 
 function Header() {
@@ -32,6 +32,6 @@ function Header() {
       </header>
     </React.Fragment>
   );
-}
+};
 
 export default Header;

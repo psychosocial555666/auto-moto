@@ -29,6 +29,6 @@ function Contacts() {
       </div>
     </React.Fragment>
   );
-}
+};
 
 export default Contacts;

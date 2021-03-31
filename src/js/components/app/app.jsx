@@ -17,11 +17,11 @@ function App(props) {
       <Footer />
     </div>
   );
-}
+};
 
 App.propTypes = {
   isModalOpened: PropTypes.bool,
-}
+};
 
 const mapStateToProps = (state) => ({
   isModalOpened: getModalStatus(state),

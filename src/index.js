@@ -6,14 +6,14 @@ import {createStore} from "redux";
 import reducer from "./js/reducer/reducer";
 import {Provider} from "react-redux";
 import { ActionCreator } from './js/reducer/data/data';
-import { cars } from './js/mock';
+import { car } from './js/mock';
 
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
 );
 
-store.dispatch(ActionCreator.loadCars(cars));
+store.dispatch(ActionCreator.loadcar(car));
 
 ReactDOM.render(
   <Provider store={store}>

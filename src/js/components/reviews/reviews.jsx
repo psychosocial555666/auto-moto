@@ -12,8 +12,6 @@ import { reviewsType } from "../../types";
 function Reviews(props) {
   const {reviews, onReviewOpenButtonClick} = props;
 
-
-
   return (
     <React.Fragment>
       <div className="tabs__reviews reviews">
@@ -50,12 +48,12 @@ function Reviews(props) {
       </div>
     </React.Fragment>
   );
-}
+};
 
 Reviews.propTypes = {
   reviews: reviewsType,
   onReviewOpenButtonClick: PropTypes.func,
-}
+};
 
 const mapDispatchToProps = (dispatch) => ({
   onReviewOpenButtonClick(status) {

@@ -1,33 +1,38 @@
 import React from "react";
-import {getCars} from "./../../reducer/data/selectors.js"
+import {getCar} from "./../../reducer/data/selectors.js"
 import {connect} from "react-redux";
 import {getCurrentTab} from "../../reducer/ui/selectors";
 import {ActionCreator} from "../../reducer/ui/ui.js"
-import { TabType } from "../../const.js";
+import {TabType} from "../../const.js";
 import Characteristics from "../characteristics/characteristics.jsx";
 import Reviews from "../reviews/reviews.jsx";
 import Contacts from "../contacts/contacts.jsx";
 import PropTypes from 'prop-types';
-import { carsType } from "../../types";
+import {carType} from "../../types";
 
 function Tabs (props) {
   const {
-    cars,
+    car,
     currentTab,
-    onTabButtionClick,
+    onTabButtonClick,
   } = props;
 
   let tabScreen;
 
-  if(currentTab === TabType.CHARACTERISTICS) {
-    tabScreen = <Characteristics characteristics={cars.characteristics} />
-  }
-  if(currentTab === TabType.REVIEWS) {
-    tabScreen = <Reviews reviews={cars.reviews}/>
-  }
-  if(currentTab === TabType.CONTACTS) {
-    tabScreen = <Contacts />
-  }
+  switch (currentTab) {
+    case TabType.CHARACTERISTICS:
+      tabScreen = <Characteristics characteristics={car.characteristics} />
+      break;
+    case TabType.REVIEWS:
+      tabScreen = <Reviews reviews={car.reviews}/>
+      break;
+    case TabType.CONTACTS:
+      tabScreen = <Contacts />
+      break;
+  
+    default:
+      break;
+  };
 
   return (
     <React.Fragment>
@@ -35,15 +40,15 @@ function Tabs (props) {
         <div className="tabs__controls">
           <button className={
             currentTab === TabType.CHARACTERISTICS ? "tabs__control tabs__control--characteristics tabs__control--active" : "tabs__control tabs__control--characteristics"}
-            onClick = {() => {onTabButtionClick(TabType.CHARACTERISTICS)}}
+            onClick = {() => {onTabButtonClick(TabType.CHARACTERISTICS)}}
             >Характеристики</button>
           <button className={
             currentTab === TabType.REVIEWS ? "tabs__control tabs__control--reviews tabs__control--active" : "tabs__control tabs__control--reviews"}
-            onClick = {() => {onTabButtionClick(TabType.REVIEWS)}}
+            onClick = {() => {onTabButtonClick(TabType.REVIEWS)}}
             >Отзывы</button>
           <button className={
             currentTab === TabType.CONTACTS ? "tabs__control tabs__control--contacts tabs__control--active" : "tabs__control tabs__control--contacts"}
-            onClick = {() => {onTabButtionClick(TabType.CONTACTS)}}
+            onClick = {() => {onTabButtonClick(TabType.CONTACTS)}}
             >Контакты</button>
         </div>
         <div className="tabs__content">
@@ -55,18 +60,18 @@ function Tabs (props) {
 }
 
 Tabs.propTypes = {
-  cars: carsType,
+  car: carType,
   currentTab: PropTypes.string,
-  onTabButtionClick: PropTypes.func,
-}
+  onTabButtonClick: PropTypes.func,
+};
 
 const mapStateToProps = (state) => ({
-  cars: getCars(state),
+  car: getCar(state),
   currentTab: getCurrentTab(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onTabButtionClick(currentTab) {
+  onTabButtonClick(currentTab) {
     dispatch(ActionCreator.setCurrentTab(currentTab));
   },
 });

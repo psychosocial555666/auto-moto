@@ -1,19 +1,19 @@
 import {extend} from "./../../utils/utils.js";
 
-const initialState = {
-  cars: [],
-};
-
 const ActionType = {
-  LOAD_CARS: `LOAD_CARS`,
+  LOAD_car: `LOAD_car`,
   ADD_NEW_REVIEW: `ADD_NEW_REVIEW`,
 };
 
+const initialState = {
+  car: [],
+};
+
 const ActionCreator = {
-  loadCars: (cars) => {
+  loadcar: (car) => {
     return {
-      type: ActionType.LOAD_CARS,
-      payload: cars,
+      type: ActionType.LOAD_car,
+      payload: car,
     };
   },
   addNewReview: (review) => {
@@ -26,16 +26,16 @@ const ActionCreator = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.LOAD_CARS:
-      return extend(state, {cars: action.payload,}
+    case ActionType.LOAD_car:
+      return extend(state, {car: action.payload,}
       );
 
     case ActionType.ADD_NEW_REVIEW:
-      return extend(state, {cars: action.payload,}
+      return extend(state, {car: action.payload,}
       );
     default:
       return state;
-  }
+  };
 };
 
 export {reducer, ActionType, ActionCreator};
