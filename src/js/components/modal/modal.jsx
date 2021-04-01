@@ -141,7 +141,7 @@ class ReviewModal extends React.PureComponent {
               <h2>Оставить отзыв </h2>
               <div className="modal__wrapper">
               <div className={this.props.isNameValid ? "modal__item modal__item--name" : "modal__item modal__item--name modal__item--invalid"}>
-                <input ref={this.nameRef} type="text" id="name" placeholder="* Имя"/>
+                <input ref={this.nameRef} type="text" id="name" placeholder="Имя"/>
                 <label htmlFor="name"><span className="visually-hidden">Имя</span></label>
               </div>
               <div className="modal__item modal__item--advantages">
@@ -169,7 +169,7 @@ class ReviewModal extends React.PureComponent {
                 
               </div>
               <div className={this.props.isCommentValid ? "modal__item modal__item--comment" : "modal__item modal__item--comment modal__item--invalid"}>
-                <textarea ref={this.commentRef}  id="comment" placeholder="* Комментарий"/>
+                <textarea ref={this.commentRef}  id="comment" placeholder="Комментарий"/>
                 <label htmlFor="comment"><span className="visually-hidden">Комментарий</span></label>
               </div>
               </div>
@@ -205,6 +205,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   popupClose(status) {
     dispatch(ActionCreatorUI.changeModalStatus(status));
+    document.querySelector("body").classList.remove("modal-opened");
   },
 
   validateName(status) {

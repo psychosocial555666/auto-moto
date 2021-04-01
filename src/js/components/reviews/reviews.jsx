@@ -58,6 +58,7 @@ Reviews.propTypes = {
 const mapDispatchToProps = (dispatch) => ({
   onReviewOpenButtonClick(status) {
     dispatch(ActionCreator.changeModalStatus(status));
+    document.querySelector("body").classList.add("modal-opened");
   },
 });
 

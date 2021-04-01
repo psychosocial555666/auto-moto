@@ -1,6 +1,7 @@
 .page-footer {
   width: 100%;
   background-color: $light-grey;
+  flex: 0 0 auto;
 }
 
 .page-footer__content {
@@ -11,9 +12,23 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.page-footer__item {
+  text-align: center;
+
+  &:nth-child(8n),
+  &:first-child {
+    text-align: left;
+  }
+
+  &:nth-child(7n) {
+   text-align: right;
+  }
 }
 
 .page-footer__link {

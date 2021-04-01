@@ -10,7 +10,7 @@ function App(props) {
   const {isModalOpened} = props;
 
   return (
-    <div className="App">
+    <div className="app">
       {isModalOpened ? <ReviewModal /> : ''}
       <Header />
       <MainContent />

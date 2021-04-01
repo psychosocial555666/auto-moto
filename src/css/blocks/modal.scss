@@ -1,5 +1,6 @@
 .modal {
   position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
@@ -50,6 +51,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
+  position: relative;
 
   input, textarea {
     padding: 15px 25px;
@@ -85,6 +87,22 @@
   grid-row-end: 4;
 }
 
+.modal__item--comment,
+.modal__item--name {
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    &::before {
+      content: "*";
+      color: $accent;
+      position: absolute;
+      top: 9px;
+      left: 12px;
+    }
+  }
+}
+
 .modal__rating {
   display: flex;
   flex-direction: row-reverse;
@@ -101,6 +119,7 @@
 
   label {
     order: 0;
+    cursor: pointer;
 
     svg {
       fill: rgba(189, 190, 194, 0.7);
@@ -131,14 +150,21 @@
 
 .modal__close {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 20px;
+  right: 20px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding: 0px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover,
   &:focus {
     opacity: 0.7;
+    outline: 1px solid rgba($accent, 0.5);
   }
 }
